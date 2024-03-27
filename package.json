@@ -11,7 +11,6 @@
 		"deploy": "vercel build && vercel --prod"
 	},
 	"dependencies": {
-		"@pbe/react-yandex-maps": "^1.2.5",
 		"@reatom/framework": "^3.4.32",
 		"@reatom/npm-react": "^3.8.3",
 		"@types/axios": "^0.14.0",
