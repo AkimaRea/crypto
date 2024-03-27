@@ -1,0 +1,43 @@
+{
+	"name": "crypto",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"start": " vite --host --mode development",
+		"build": "tsc && vite build --mode production",
+		"lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview",
+		"deploy": "vercel build && vercel --prod"
+	},
+	"dependencies": {
+		"@pbe/react-yandex-maps": "^1.2.5",
+		"@reatom/framework": "^3.4.32",
+		"@reatom/npm-react": "^3.8.3",
+		"@types/axios": "^0.14.0",
+		"axios": "^1.6.7",
+		"classnames": "^2.5.1",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-router": "^6.21.3",
+		"react-router-dom": "^6.21.3",
+		"vite-plugin-svgr": "^4.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "^20.11.6",
+		"@types/react": "^18.2.43",
+		"@types/react-dom": "^18.2.17",
+		"@types/react-router": "^5.1.20",
+		"@types/react-router-dom": "^5.3.3",
+		"@typescript-eslint/eslint-plugin": "^6.14.0",
+		"@typescript-eslint/parser": "^6.14.0",
+		"@vitejs/plugin-react": "^4.2.1",
+		"eslint": "^8.55.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.4.5",
+		"ts-css-modules-vite-plugin": "^1.0.20",
+		"typescript": "^5.2.2",
+		"vite": "^5.0.8",
+		"vite-plugin-mkcert": "^1.17.3"
+	}
+}

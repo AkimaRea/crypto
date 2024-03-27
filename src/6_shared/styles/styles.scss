@@ -1,0 +1,80 @@
+@import url("./colors.css");
+
+* {
+	box-sizing: border-box;
+	font-family: "Open Sans";
+}
+
+body,
+html {
+	padding: 0;
+	margin: 0;
+	background-color: #1f1f1f;
+}
+
+input,
+button,
+a {
+	outline: none;
+	border: none;
+	text-decoration: none;
+	background: none;
+}
+
+input[type="text"]:hover {
+	cursor: text;
+}
+
+button:hover,
+a:hover,
+label:hover {
+	cursor: pointer;
+}
+
+.row_wrapper {
+	height: 21px;
+	overflow: hidden;
+	*,
+	&:disabled {
+		color: #fafafa;
+	}
+	&.active {
+		height: fit-content;
+		overflow: visible;
+	}
+	&.active .text_content {
+		transition: 0.2s ease;
+		overflow: visible;
+		white-space: unset;
+		text-overflow: unset;
+	}
+
+	textarea {
+		vertical-align: top;
+		font-size: 16px;
+		text-align: left;
+		width: 85vw;
+		resize: none;
+		background: none;
+		border: none;
+		outline: none;
+	}
+
+	textarea,
+	.text_content {
+		margin-bottom: 20px;
+	}
+
+	.text_content {
+		width: 85vw;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		transition: 0.2s ease;
+	}
+
+	.text_actions {
+		align-items: center;
+		display: flex;
+	}
+}

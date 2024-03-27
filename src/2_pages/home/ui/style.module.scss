@@ -1,0 +1,40 @@
+.wrapper {
+	padding: 50px 0;
+}
+
+.table {
+	width: 100%;
+	padding: 25px 30px;
+	background: #181818;
+
+	tr {
+		vertical-align: top;
+		font-size: 16px;
+		text-align: left;
+		color: #fafafa;
+		&:not(:last-of-type) {
+			td {
+				padding-bottom: 20px;
+			}
+		}
+
+		&:last-of-type {
+			td {
+				padding-bottom: 5px;
+			}
+		}
+	}
+
+	&__head {
+		white-space: nowrap;
+		padding-bottom: 15px;
+		color: #fafafa99;
+		font-size: 24px;
+		font-weight: normal;
+		text-align: left;
+
+		&:first-of-type {
+			padding-right: 20px;
+		}
+	}
+}
