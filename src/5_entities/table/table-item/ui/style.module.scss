@@ -7,7 +7,15 @@
 		margin: 0 20px;
 	}
 }
+
 .textarea {
 	height: 200px;
 	border: 1px solid #ffffff51 !important;
+}
+
+.row {
+	td:last-of-type {
+		text-align: center;
+	}
+
 }

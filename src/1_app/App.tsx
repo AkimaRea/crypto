@@ -14,6 +14,7 @@ function App() {
 				<Routes>
 					<Route path='/'>
 						<Route element={<Home />} index />
+						<Route element={<GraphGen />} path='graph-gen' />
 						{/* <Route element={<Offline />} path='offline' /> */}
 						{/* <Route element={<NotFound />} path='404' /> */}
 					</Route>

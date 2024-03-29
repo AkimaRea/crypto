@@ -6,9 +6,19 @@ interface P {
 	id: string | number;
 	text: string;
 	active: boolean;
+	plan: string;
+	fact: string;
+	changed: number;
 }
 
-export const TableItem = ({ active, id, text }: P): JSX.Element => {
+export const TableItem = ({
+	active,
+	id,
+	text,
+	plan,
+	fact,
+	changed,
+}: P): JSX.Element => {
 	const [value, setValue] = useState(text);
 	const [initialValue, setInitialValue] = useState(text);
 	const [isEdit, setIsEdit] = useState(false);
@@ -69,6 +79,9 @@ export const TableItem = ({ active, id, text }: P): JSX.Element => {
 					</div>
 				</div>
 			</td>
+			<td>{plan}</td>
+			<td>{fact}</td>
+			<td>{changed}</td>
 		</tr>
 	);
 };
