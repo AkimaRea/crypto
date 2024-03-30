@@ -1,32 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import { defaultSettings } from "@/6_shared/config/defaults";
+import { toPng } from "html-to-image";
+import { useEffect, useState } from "react";
+import { InfographicPreview } from "../../../3_widgets/infographic-preview/ui/InfographicPreview";
+import { infographicData } from "../model/graph-model";
 import s from "./style.module.scss";
-import cx from "classnames";
-import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
-import html2canvas from "html2canvas";
-
-const data = [
-	{
-		name: "Coin A",
-		value: 4000,
-	},
-	{
-		name: "Coin B",
-		value: 3000,
-	},
-];
-
-const infographicData = {
-	date: "01-01-2000 12:00",
-};
-
-const defaultSettings: GeneratorSettings = {
-	color: "#fff",
-	background: "rgba(64, 64, 64, 1)",
-};
 
 export const GraphGen = (): JSX.Element => {
 	const [settings, setSettings] = useState<GeneratorSettings | null>(null);
-	const infographicRef = useRef(null);
 
 	useEffect(() => {
 		if (localStorage.getItem("settings")) {
@@ -37,7 +17,7 @@ export const GraphGen = (): JSX.Element => {
 		}
 	}, []);
 
-	const settingChangeHandler = (e) => {
+	const settingChangeHandler = (e: any) => {
 		setSettings({ ...settings, [e.target.id]: e.target.value });
 		localStorage.setItem(
 			"settings",
@@ -51,13 +31,21 @@ export const GraphGen = (): JSX.Element => {
 	};
 
 	const downloadImage = () => {
-		if (infographicRef.current)
-			html2canvas(infographicRef.current).then((canvas) => {
+		const el = document.getElementById('infographic')
+		if (el) {
+			toPng(el).then(function (dataUrl) {
 				const a = document.createElement("a");
-				a.download = "ss.png";
-				a.href = canvas.toDataURL("image/png");
-				a.click(); // MAY NOT ALWAYS WORK!
+				a.download = "infograph.png";
+				a.href = dataUrl;
+				a.click();
 			});
+			/* html2canvas(infographicRef.current).then((canvas) => {
+				const a = document.createElement("a");
+				a.download = "infograph.png";
+				a.href = canvas.toDataURL("image/png");
+				a.click();
+			}); */
+		}
 	};
 
 	return (
@@ -84,53 +72,46 @@ export const GraphGen = (): JSX.Element => {
 						id='background'
 					/>
 				</label>
+				<label htmlFor='background'>
+					<span>Ширина изображения (px)</span>
+					<div>
+						<input
+							value={settings?.width}
+							onChange={(e) => {
+								if (+e.target.value > 1600) {
+									e.target.value = "1600";
+									settingChangeHandler(e);
+								} else {
+									settingChangeHandler(e);
+								}
+							}}
+							type='text'
+							id='width'
+						/>
+						<input
+							value={settings?.width}
+							onChange={(e) => settingChangeHandler(e)}
+							type='range'
+							max={1600}
+							min={350}
+							id='width'
+						/>
+					</div>
+				</label>
 				<button className={s.reset} onClick={resetSettings}>
 					Сбросить
 				</button>
 			</div>
 			<div className={s.wrapper}>
-				<div className={s.wrapper_shadow}>
-					<div
-						ref={infographicRef}
-						className={s.infographic_body}
-						style={{
-							color: settings?.color,
-							background: settings?.background,
-						}}>
-						<div className={s.infographic_body_header}>
-							<h1>CryptoSummary Daily</h1>
-							<span>{infographicData.date}</span>
-						</div>
-						<div className={s.infographic_body_graphs}>
-							<div className={s.card}></div>
-							<div className={s.card}></div>
-						</div>
-						<div className={s.infographic_body_coins}>
-							<div className={s.card}></div>
-							<div className={s.card}></div>
-							<div className={s.card}></div>
-						</div>
-						<div className={s.infographic_body_outflow_graphs}>
-							<div className={s.card}></div>
-							<div className={s.card}></div>
-							<div className={s.card}></div>
-						</div>
-					</div>
+				<div
+					className={s.wrapper_shadow}
+					style={{ maxWidth: settings?.width + "px" }}>
+					<InfographicPreview
+						infographicData={infographicData}
+						settings={settings}
+					/>
 				</div>
 			</div>
 		</main>
 	);
 };
-
-{
-	/* <BarChart
-				data={data}
-				width={600}
-				height={400}
-				className={s.bar_chart}
-				layout='vertical'>
-				<XAxis type='number' dataKey='value' />
-				<YAxis type='category' dataKey='name' />
-				<Bar dataKey='value' />
-			</BarChart> */
-}

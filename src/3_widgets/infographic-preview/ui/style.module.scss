@@ -1,0 +1,103 @@
+.infographic {
+	&_body {
+		padding: 28px 30px;
+		max-width: inherit;
+
+		* {
+			color: inherit;
+		}
+
+		&_header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 20px;
+
+			h1 {
+				margin: 0;
+			}
+		}
+
+		&_graphs {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			gap: 30px;
+
+			.card {
+				height: fit-content;
+
+				&:first-of-type {
+					width: 45%;
+				}
+
+				&:last-of-type {
+					width: 55%;
+				}
+			}
+		}
+
+		&_coins,
+		&_outflow_graphs {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 30px;
+			gap: 30px;
+
+			.card {
+				width: 33%;
+				height: 100px;
+			}
+		}
+
+		&_outflow_graphs {
+			.card {
+				width: 33%;
+				height: 300px;
+			}
+		}
+
+		.card {
+			border-radius: 18px;
+			box-shadow: 8px 8px 6px 0px #00000040, -6px -6px 6px 0px #ffffff08;
+		}
+	}
+}
+
+.btcDailyFlows {
+	padding: 15px 20px;
+	height: 100%;
+
+	&_header {
+		font-size: 14px;
+		font-weight: 600;
+		margin-bottom: 10px;
+		
+		span {
+			&[data-dir="inflow"] {
+				color: greenyellow !important;
+			}
+
+			&[data-dir="outflow"] {
+				color: red !important;
+			}
+		}
+		&_total {
+			text-transform: capitalize;
+		}
+	}
+
+	&_graph {
+		padding: 10px;
+		border-radius: 18px;
+		box-shadow: 8px 8px 6px 0px #00000040 inset, -6px -6px 6px 0px #ffffff08 inset;
+
+		:global(.recharts-text.recharts-cartesian-axis-tick-value) {
+			tspan {
+				font-size: 10px !important;
+			}
+		}
+	}
+}

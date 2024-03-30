@@ -1,4 +1,5 @@
 @import url("./colors.css");
+@import url("./font/stylesheet.css");
 
 * {
 	box-sizing: border-box;
@@ -76,4 +77,8 @@ label:hover {
 		align-items: center;
 		display: flex;
 	}
+}
+
+.jopa {
+
 }
