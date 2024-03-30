@@ -1,5 +1,31 @@
 export const infographicData: InfographicDTO = {
 	date: "Apr. 30, 2024",
+	assets: {
+		btc: {
+			name: "BTC",
+			price: 20000.06,
+			daily: {
+				res: "raised",
+				value: 2.09,
+			},
+		},
+		eth: {
+			name: "ETH",
+			price: 14133.37,
+			daily: {
+				res: "raised",
+				value: 5.16,
+			},
+		},
+		snp: {
+			name: "S&P",
+			price: 54630.9,
+			daily: {
+				res: "falled",
+				value: 4.31,
+			},
+		},
+	},
 	btcDailyFlows: {
 		flows: {
 			value: 7.58,
@@ -26,7 +52,8 @@ export const infographicData: InfographicDTO = {
 			{
 				name: "05-05",
 				values: [12, 16],
-			},{
+			},
+			{
 				name: "05-07",
 				values: [3, 12],
 			},
@@ -34,7 +61,7 @@ export const infographicData: InfographicDTO = {
 				name: "05-06",
 				values: [5, 16],
 			},
-			
+
 			{
 				name: "05-08",
 				values: [0, 8],
@@ -78,6 +105,75 @@ export const infographicData: InfographicDTO = {
 			{
 				name: "05-05",
 				values: [12, 16],
+			},
+			{
+				name: "05-01",
+				values: [-1, 10],
+			},
+			{
+				name: "05-02",
+				values: [2, 15],
+			},
+			{
+				name: "05-03",
+				values: [3, 12],
+			},
+			{
+				name: "05-04",
+				values: [4, 12],
+			},
+			{
+				name: "05-05",
+				values: [12, 16],
+			},
+			{
+				name: "05-07",
+				values: [3, 12],
+			},
+			{
+				name: "05-06",
+				values: [5, 16],
+			},
+
+			{
+				name: "05-08",
+				values: [0, 8],
+			},
+			{
+				name: "05-09",
+				values: [-3, 5],
+			},
+			{
+				name: "05-01",
+				values: [-1, 10],
+			},
+			{
+				name: "05-02",
+				values: [2, 15],
+			},
+			{
+				name: "05-03",
+				values: [3, 12],
+			},
+			{
+				name: "05-04",
+				values: [4, 12],
+			},
+			{
+				name: "05-08",
+				values: [0, 8],
+			},
+			{
+				name: "05-09",
+				values: [-3, 5],
+			},
+			{
+				name: "05-07",
+				values: [3, 12],
+			},
+			{
+				name: "05-06",
+				values: [5, 16],
 			},
 		],
 	},

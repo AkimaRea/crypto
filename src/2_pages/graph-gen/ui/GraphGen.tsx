@@ -78,8 +78,8 @@ export const GraphGen = (): JSX.Element => {
 						<input
 							value={settings?.width}
 							onChange={(e) => {
-								if (+e.target.value > 1600) {
-									e.target.value = "1600";
+								if (+e.target.value > 1200) {
+									e.target.value = "1200";
 									settingChangeHandler(e);
 								} else {
 									settingChangeHandler(e);
@@ -92,7 +92,7 @@ export const GraphGen = (): JSX.Element => {
 							value={settings?.width}
 							onChange={(e) => settingChangeHandler(e)}
 							type='range'
-							max={1600}
+							max={1200}
 							min={350}
 							id='width'
 						/>

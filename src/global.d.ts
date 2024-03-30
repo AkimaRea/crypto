@@ -16,6 +16,20 @@ interface InfographicDTO {
 		totalValue: string;
 		values: BtcDailyFlowsValue[];
 	};
+	assets: {
+		btc: AssetAttr;
+		eth: AssetAttr;
+		snp: AssetAttr;
+	};
+}
+
+interface AssetAttr {
+	name: string;
+	price: number;
+	daily: {
+		res: "raised" | "falled";
+		value: number;
+	};
 }
 
 interface BtcDailyFlowsValue {

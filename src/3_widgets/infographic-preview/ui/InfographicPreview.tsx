@@ -1,6 +1,7 @@
 import { TotalMarketCap } from "@/5_entities/total-market-cap-card";
 import s from "./style.module.scss";
 import { BtcDailyFlowsCard } from "@/5_entities/btc-daily-flows-card";
+import { AssetCard } from "@/5_entities/asset-card";
 
 interface P {
 	settings: GeneratorSettings | null;
@@ -31,9 +32,9 @@ export const InfographicPreview = ({
 				/>
 			</div>
 			<div className={s.infographic_body_coins}>
-				<div className={s.card}></div>
-				<div className={s.card}></div>
-				<div className={s.card}></div>
+				<AssetCard asset={infographicData.assets.btc} className={s.card} />
+				<AssetCard asset={infographicData.assets.eth} className={s.card} />
+				<AssetCard asset={infographicData.assets.snp} className={s.card} />
 			</div>
 			<div className={s.infographic_body_outflow_graphs}>
 				<div className={s.card}></div>

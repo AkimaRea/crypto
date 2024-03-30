@@ -1,0 +1,41 @@
+.asset {
+	padding: 10px 20px;
+
+	& > div {
+		&:first-of-type {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-bottom: 5px;
+		}
+	}
+
+	&_name {
+		font-size: 20px;
+		font-weight: 700;
+		letter-spacing: 1px;
+		color: #ddba1d;
+	}
+
+	&_percentage {
+		font-size: 14px;
+		display: flex;
+		align-items: center;
+		gap: 3px;
+		span {
+		font-size: 10px;
+		}
+
+		&[data-dir="raised"] span {
+			color: greenyellow !important;
+		}
+
+		&[data-dir="falled"] span {
+			color: red !important;
+		}
+	}
+
+	&_price {
+		font-size: 20px;
+	}
+}
