@@ -1,2 +1,2 @@
-import { TotalMarketCap } from "./ui/BtcDailyFlowsCard";
-export { TotalMarketCap };
+import { BtcDailyFlowsCard } from "./ui/BtcDailyFlowsCard";
+export { BtcDailyFlowsCard };
